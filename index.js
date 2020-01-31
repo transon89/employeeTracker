@@ -5,16 +5,16 @@ const chalk = require("chalk");
 const connection = mysql.createConnection({
   host: "localhost",
   port: 3306,
-  user: "root", //connecting to DataBase
+  user: "root", 
   password: "Rongho89$",
   database: "Employee_Tracker"
 });
-// IF (connection) start program
+
 connection.connect(err => {
   if (err) throw err;
   start();
 });
-/* Kicking off the prompt to start program */
+
 function start() {
   inquirer
     .prompt({
@@ -33,7 +33,7 @@ function start() {
         "Update Employee by Manager",
         "exit"
       ]
-    }) /* User Input will activate a function from switch statement */
+    }) 
     .then(answer => {
       switch (answer.action) {
         case "View all Employees":
